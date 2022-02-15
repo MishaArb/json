@@ -1,8 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:json/test_class.dart';
+
+
+import 'new_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           ff(i, h);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => NewScreen()));
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
