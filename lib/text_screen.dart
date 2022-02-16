@@ -17,7 +17,7 @@ class _TextScreenState extends State<TextScreen> {
             child: Row(
               children: [
                 Container(width: 10, height: 10,color: Colors.red,),
-                Container(width: 10, height: 10,color: Colors.blue,),
+                Container(width: 10, height: 10,color: Colors.green,),
 
               ],
             ),
