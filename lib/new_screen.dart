@@ -12,7 +12,7 @@ class _NewScreenState extends State<NewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      color: Colors.blue,
+      color: Colors.red,
       child: Center(
         child: Text('Hello World'),
       ),

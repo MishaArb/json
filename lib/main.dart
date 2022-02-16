@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children:  [
               Text('Привет',),
-              Text('Как дела'),
+              Text('Change text'),
               Text('${res}'),
               Text('Пока'),
             ],
