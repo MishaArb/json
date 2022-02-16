@@ -15,7 +15,7 @@ class _NewScreenState extends State<NewScreen> {
         body: Container(
       color: Colors.red,
       child: Center(
-        child: Column(
+        child: Row(
           children: [
             Text('Hello World'),
             GestureDetector(
