@@ -16,7 +16,7 @@ class _TextScreenState extends State<TextScreen> {
           child: Center(
             child: Row(
               children: [
-                Text('It is text screen'),
+                Container(width: 10, height: 10,color: Colors.red,),
                 Text('new  Text'),
               ],
             ),
