@@ -12,7 +12,7 @@ class _TextScreenState extends State<TextScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          color: Colors.orange,
+          color: Colors.white,
           child: Center(
             child: Text('It is text screen'),
           ),
