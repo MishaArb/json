@@ -14,7 +14,12 @@ class _TextScreenState extends State<TextScreen> {
         body: Container(
           color: Colors.white,
           child: Center(
-            child: Text('It is text screen'),
+            child: Column(
+              children: [
+                Text('It is text screen'),
+                Text('new  Text'),
+              ],
+            ),
           ),
         ));
   }
