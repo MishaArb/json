@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+       brightness: Brightness.dark,
         primarySwatch: Colors.red,
       ),
       home: const MyHomePage(),
@@ -24,25 +27,46 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage();
+  const MyHomePage() ;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int i = 2;
-  int h = 3;
-  int res = 0;
-  void ff(int a, int s) {
-    setState(() {
-      res =a + s;
-    });
+StreamController<int> controller = StreamController<int>();
+StreamSubscription<int>? subscription;
 
+
+
+
+@override
+  void initState() {
+  controller.add(1);
+  controller.add(2);
+  controller.add(3);
+  print('one');
+  subscription = controller.stream.listen((event) {
+    print(event);
+    if(event == 4){
+      subscription?.cancel();
+    }
+  });
+  controller.add(4);
+  controller.add(5);
+  controller.add(6);
+
+
+  Future.delayed(Duration(seconds: 10), (){
+    subscription?.cancel();
+  });
+    super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const TextField(),
@@ -57,15 +81,13 @@ class _MyHomePageState extends State<MyHomePage> {
             children:  [
               Text('Привет',),
               Text('Change text'),
-              Text('${res}'),
-              Text('Пока'),
+                Text('Пока'),
             ],
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ff(i, h);
           Navigator.push(context, MaterialPageRoute(builder: (context) => NewScreen()));
         },
         tooltip: 'Increment',
